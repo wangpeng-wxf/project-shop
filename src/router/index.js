@@ -17,8 +17,13 @@ const routes = [
   {
     path: '/home',
     name: 'Home',
+    redirect: '/welcome',
     //路由懒加载
-    component: () => import('@/views/home/Home.vue')
+    component: () => import('@/views/home/Home.vue'),
+    children: [
+      {path: '/welcome', name: 'Welcome' , component: () => import('@/views/home/welcome/Welcome.vue')},
+      {path: '/users', name: 'Users', component: () => import('@/views/user/Users.vue')}
+    ]
   }
 ]
 

@@ -45,6 +45,7 @@ export default {
             }
         }
     },
+    
     methods: {
         //点击登录按钮提交数据
         submitLoginForm() {
@@ -68,7 +69,7 @@ export default {
                             
                         })
                         .catch(error => {
-                            console.log(error);
+                            this.$message.error(error);
                         });
                 } else {
                     return false;
